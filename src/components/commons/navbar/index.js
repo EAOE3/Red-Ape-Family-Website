@@ -88,7 +88,7 @@ const Navbar = props => {
                         </a>
                     </div>
                     <div class="navbar-item has-text-centered-mobile">
-                        <a class="is-size-4 " href="https://discord.gg/n2J3nNt3jE" target="_blank" onClick={onBurgerIClicked}>
+                        <a class="is-size-4 " href="https://discord.gg/HxE754wj9r" target="_blank" onClick={onBurgerIClicked}>
                             <span className="icon has-text-white">
                                 <i class="fab fa-discord"></i>
                             </span>

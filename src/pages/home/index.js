@@ -85,7 +85,7 @@ const HomePage = props => {
                             <div className="column"></div>
                             <div className="column  has-text-centered">
 
-                                <a href="https://discord.gg/XtsPjy5f" target="_blank" className="button is-cpurple has-text-white is-size-4 is-rounded has-font-audiowide">
+                                <a href="https://discord.gg/HxE754wj9r" target="_blank" className="button is-cpurple has-text-white is-size-4 is-rounded has-font-audiowide">
                                     <strong>JOIN DISCORD</strong></a>
                             </div>
                         </div>
@@ -187,7 +187,7 @@ const HomePage = props => {
                     </div>
                     <br/><br/>
                     <div className="columns is-multiline px-3">
-                        
+
                         {
                             [...teamData].splice(5, 5).map( (t, i) =>
                                 <div className="column has-text-centered" key={i}>
