@@ -21,6 +21,9 @@ import castMisteryPng from 'media/mystery.webp';
 import castQuestionPng from 'media/question.gif';
 import openseaPng from 'media/opensea.png';
 
+import giveawaysPng from 'media/giveaways.png';
+import roadmapPng from 'media/roadmap.png';
+
 
 export const titleImg = titleImgPng;
 export const logo = logoPng;
@@ -48,3 +51,7 @@ export const ape5 = cast5Png;
 export const mistery = castMisteryPng;
 export const question = castQuestionPng;
 export const opensea = openseaPng;
+
+//section images
+export const giveaways = giveawaysPng;
+export const roadmap = roadmapPng;

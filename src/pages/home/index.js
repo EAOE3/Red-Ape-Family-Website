@@ -6,7 +6,9 @@ import {
 
     cloudsBanner,
     titleImg,
-    movie
+    movie,
+    giveaways,
+    roadmap
 }
 from 'images';
 
@@ -104,9 +106,8 @@ const HomePage = props => {
                         <div className="column">
                             <p className="has-text-white has-text-weight-bold is-size-5 has-text-centered">
 
-                                Weaving contemporary sci-fi comedy with the infrastructure of NFTs, The Red Ape Family is the first Digital Asset to take shape of a sitcom whilst also involving your favorite NFTs.
-                                <br/><br/>
-                                Pre-sale of EP1 is LIVE - Only 333 Tokens Available
+                                Weaving contemporary sci-fi comedy with the infrastructure of NFTs, The Red Ape Family is the first Digital Asset to take shape of a sitcom whilst also involving your favorite NFTs.                                
+                                
 
                             </p>
                         </div>
@@ -117,27 +118,22 @@ const HomePage = props => {
 
             {/*roadmap*/}
             <section className="has-background-black px-4" ref={roadMapSection}>
-                <div className="container py-6 px-4 has-text-centered">
-                    <h1 className="title has-text-white">ROADMAP EPISODE 1</h1>
-
-
-                    <ul className="roadmap-list">
-                        {
-                            data.map( (rmap, i) =>
-                                <li className="has-text-white mb-3 is-size-5 has-text-weight-bold" key={i}>
-                                    <span className="has-text-warning">{rmap.title}</span> <br/>
-                                    <span><ReactHtml html={rmap.body}/></span>
-                                </li>
-                            )
-                        }
-                    </ul>
-                    <br/>
-
+                <div className="columns">
+                <div className="column p-0">
+                        <figure className="image is-16x9">
+                            <img src={giveaways} alt=""/>
+                        </figure>
+                    </div>
+                    <div className="column p-0">
+                        <figure className="image is-16x9">
+                            <img src={roadmap} alt=""/>
+                        </figure>
+                    </div>                    
                 </div>
             </section>
 
-            {/* mint section*/}
-            <section className="has-background-primary py-6">
+            {/* old roadmap section*/}
+            <section className="has-background-primary py-6 is-hidden">
                 <div className="container has-text-centered">
                         <h1 className="title has-text-white">ROADMAP SEASON 1</h1>
                     <ul className="roadmap-list">

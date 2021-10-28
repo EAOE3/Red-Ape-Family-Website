@@ -159,15 +159,15 @@ const Form = props => {
                 <div>{(webData && webData.mintsLeft == 0) ? 'You have reached the minting limit for this episode! Thank you so much!' : ''}</div>
                 <br/>
                 <br/>
-                <p className="has-text-centered has-text-weight-bold has-text-white has-font-audiowide">
+                <p className="has-text-centered has-text-weight-bold has-text-white has-font-audiowide is-size-5">
                     
 
-PRESALE IS NOW OPEN <br/>
-MINT EPISODE 1 TOKEN AT 0.95 ETH + GAS <br/>
-REVEAL OF EPISODE 1 ON NOVEMBER 23 
+                    Presale of Episode 1 is LIVE <br/>
+                    Mint episode 1 token at 0.95 eth + gas <br/>
+                    Reveal of episode 1 on november 23 
                     <br/>
-MAXIMUM OF 10 TOKENS PER WALLET <br/>
-                    SUPPORTED WALLET: METAMASK
+                    Maximum of 10 tokens per wallet <br/>
+                    Supported wallet: metamask
                     <br/><br/>
                     <a className="has-text-cyellow" onClick={e => setVideoOpen(true)}>HOW TO MINT FROM YOUR SMARTPHONE </a>
                 </p>
