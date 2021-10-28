@@ -160,8 +160,13 @@ const Form = props => {
                 <br/>
                 <br/>
                 <p className="has-text-centered has-text-weight-bold has-text-white has-font-audiowide">
-                    MAXIMUM OF 10 TOKENS PER WALLET
+                    
+
+PRESALE IS NOW OPEN <br/>
+MINT EPISODE 1 TOKEN AT 0.95 ETH + GAS <br/>
+REVEAL OF EPISODE 1 ON NOVEMBER 23 
                     <br/>
+MAXIMUM OF 10 TOKENS PER WALLET <br/>
                     SUPPORTED WALLET: METAMASK
                     <br/><br/>
                     <a className="has-text-cyellow" onClick={e => setVideoOpen(true)}>HOW TO MINT FROM YOUR SMARTPHONE </a>
