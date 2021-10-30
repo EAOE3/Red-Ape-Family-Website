@@ -31,13 +31,13 @@ const cast = [
     }, {
         imageurl: ape4,
         name: "Hunky",
-        discord: "BAYC #6614",
+        discord: "BAYC #7296",
         link: '<a href="https://opensea.io/assets/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d/7296" ><span class="icon"><img src="'+ opensea +'"></span></a>',
 
     }, {
         imageurl: ape5,
         name: "Rocky",
-        discord: "BAYC #6614",
+        discord: "BAYC #7667",
         link: '<a href="https://opensea.io/assets/0xba30e5f9bb24caa003e9f2f0497ad287fdf95623/7667" ><span class="icon"><img src="'+ opensea +'"></span></a>',
 
     }, {
