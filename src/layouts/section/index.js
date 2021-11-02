@@ -1,7 +1,6 @@
 import './section.scss';
 
-const SectionLayout = props => {
-    console.log(props);
+const SectionLayout = props => {    
     return(
         <section className={`section-layout px-3 ${props.className}`}>
             <div className="container">

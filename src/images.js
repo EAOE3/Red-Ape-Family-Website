@@ -1,6 +1,5 @@
 import titleImgPng from 'media/logo.png';
 import logoPng from 'media/logonavbar.png';
-import clapperPng from 'media/clapper.png';
 import banner from 'media/banner.mp4';
 import bananaIconPng from 'media/bananaIcon.png';
 import benefitsVideoMp4 from 'media/benefits.mp4';
@@ -28,14 +27,14 @@ import castMisteryPng from 'media/mystery.webp';
 import castQuestionPng from 'media/question.gif';
 import openseaPng from 'media/opensea.png';
 
+import episodesRoadmapPng from 'media/episodes-roadmap.png';
+import projectRoadmapPng from 'media/project-roadmap.png';
 import giveawaysPng from 'media/giveaways.png';
-import roadmapPng from 'media/roadmap.png';
-
+import guestPng from 'media/guest.png';
 
 export const titleImg = titleImgPng;
 export const logo = logoPng;
 export const bannerVideo = banner;
-export const movie = clapperPng;
 export const bananaIcon = bananaIconPng;
 export const benefitsVideo = benefitsVideoMp4;
 export const chuckyVideo = chuckyVideoMp4;
@@ -65,5 +64,7 @@ export const question = castQuestionPng;
 export const opensea = openseaPng;
 
 //section images
+export const episodesRoadmap = episodesRoadmapPng;
+export const projectRoadmap = projectRoadmapPng;
 export const giveaways = giveawaysPng;
-export const roadmap = roadmapPng;
+export const guest = guestPng;

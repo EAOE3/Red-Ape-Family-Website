@@ -7,8 +7,10 @@ import {
     cloudsBanner,
     titleImg,
     movie,
+    episodesRoadmap,
+    projectRoadmap,
     giveaways,
-    roadmap,
+    guest,
     bannerVideo,
     bananaIcon,
     benefitsVideo,
@@ -175,14 +177,18 @@ const HomePage = props => {
                 className="has-background-black"
                 content={
                     <div>
-                        
                         <h1 className="title has-text-white is-4 has-text-left ">SEASON 1 MIDSEASON <span className="has-text-warning">ROADMAP</span> </h1>
-                        <div className="columns">                            
+                        <div className="columns is-vcentered" style={{background: '#FBDD1D'}}>
                             <div className="column p-0">
                                 <figure className="image is-16x9">
-                                    <img src={roadmap} alt=""/>
+                                    <img src={episodesRoadmap} alt=""/>
                                 </figure>
-                            </div>                    
+                            </div>
+                            <div className="column p-0 is-4">
+                                <figure className="image">
+                                    <img src={giveaways} alt=""/>
+                                </figure>
+                            </div>
                         </div>
                     </div>
                 }
@@ -195,10 +201,15 @@ const HomePage = props => {
                     <div>
                         
                         <h1 className="title has-text-white is-4 has-text-left">TURN YOUR NFT INTO A STAR AND <span className="has-text-warning">GET PAID</span>!</h1>
-                        <div className="columns">                            
+                        <div className="columns is-vcentered" style={{background: '#FCE711'}}>                             
+                            <div className="column p-0 is-4" >
+                                <figure className="image">
+                                    <img src={guest} alt=""/>
+                                </figure>
+                            </div>     
                             <div className="column p-0">
                                 <figure className="image is-16x9">
-                                    <img src={roadmap} alt=""/>
+                                    <img src={projectRoadmap} alt=""/>
                                 </figure>
                             </div>                    
                         </div>
