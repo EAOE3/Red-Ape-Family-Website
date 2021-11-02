@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import {
     logo
 } from 'images';
@@ -13,6 +15,14 @@ import {opensea} from 'images';
 import './navbar.scss';
 
 const Navbar = props => {
+
+    const [scroll, setScroll] = useState(0);
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            setScroll(window.scrollY);
+        });
+    }, []);
 
     const onBurgerClicked= e => {
         e.preventDefault();
@@ -33,7 +43,7 @@ const Navbar = props => {
 
 
     return(
-        <nav class="navbar has-background-black is-fixed-top" role="navigation" aria-label="main navigation">
+        <nav className={`navbar is-fixed-top ${scroll > 100 ? 'navbar-grey' : 'has-background-black'}`} role="navigation" aria-label="main navigation">
             <div className="container">
                 <div class="navbar-brand">
                     <Link to="/home" class="navbar-item" onClick={e => {props.set_section("HOME")}}>

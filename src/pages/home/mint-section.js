@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import CountDown from 'components/count-down';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
@@ -165,7 +166,7 @@ const Form = props => {
                     <br/>
                     <a className="has-text-warning" onClick={e => setVideoOpen(true)}>HOW TO MINT FROM YOUR SMARTPHONE </a>
                     <hr style={{width:'200px', margin: '20px auto', background: '#4E4E4E' }}/>
-                    <span className="has-text-warning" onClick={e => setVideoOpen(true)}>REVEAL <br/> 22 DAYS 19 HOURS 32 MINUTES 59 SECONDS</span>
+                    <span className="has-text-warning" onClick={e => setVideoOpen(true)}>REVEAL <br/> <CountDown className="is-uppercase"/></span>
                 </p>
             </div>
         </form>
