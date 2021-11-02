@@ -145,11 +145,12 @@ const HomePage = props => {
                 content={
                     <div>
                         <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">SEASON 1 <span className="has-text-warning">TRAILER</span></h1>
-                        <p className="title has-text-white is-6">
+                        <p className="title has-text-white is-6 mb-0">
                             It’s 2130. The earth is dying. But all is not lost! Four Bored Apes. One Dog. A Lazy Lion with a stethoscope. On a mission to Mars!
                             <br/><br/>
                             Muskville Let’s Fucking go!
                         </p>
+                        <br/><br/>
                         <div className="columns" >
                             <div className="column">                                
                                 <video controls style={{maxHeight: '430px'}}>
@@ -171,36 +172,37 @@ const HomePage = props => {
             <SectionLayout
                 className="has-background-black"
                 content={
-                    <div className="columns">
-                        <div className="column has-text-centered  px-4">
-                            <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">EXCLUSIVE BENEFITS FOR <br/><span className="has-text-warning">THE RED APE FAMILY</span> HOLDERS</h1>
-                            <br/>
-                            <ul>
-                                {
-                                    benefitsData.map((item, i) =>
-                                        <li className="media is-size-6" key={i}>
-                                            <div className="media-left">      
-                                                <figure className="image is-24x24">
-                                                    <img src={bananaIcon} alt=""/>                                        
-                                                </figure>
-                                            </div>
-                                            <div className="media-content has-text-left">
-                                                <span className="has-text-white">{item.body}</span>
-                                            </div>
-                                        </li>                                        
-                                    )
-                                }
-                            </ul>
+                    <div>
+                        <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">EXCLUSIVE BENEFITS FOR <br/><span className="has-text-warning">THE RED APE FAMILY</span> HOLDERS</h1>
+                        <br/>
+                        <div className="columns">
+                            <div className="column has-text-centered  px-4">                                
+                                <ul>
+                                    {
+                                        benefitsData.map((item, i) =>
+                                            <li className="media is-size-6" key={i}>
+                                                <div className="media-left">      
+                                                    <figure className="image is-24x24">
+                                                        <img src={bananaIcon} alt=""/>                                        
+                                                    </figure>
+                                                </div>
+                                                <div className="media-content has-text-left">
+                                                    <span className="has-text-white">{item.body}</span>
+                                                </div>
+                                            </li>                                        
+                                        )
+                                    }
+                                </ul>
+                            </div>                            
+                            <div className="column" style={{position: 'relative'}}>                            
+                                <div className="pl-5">
+                                    <video playsInline autoPlay muted loop style={{width:'350px', border: '3px solid #4a4a4a'}}>
+                                        <source src={benefitsVideo} type="video/mp4"/>
+                                    </video>
+                                </div>                
+                            </div>
                         </div>
-                        
-                        <div className="column" style={{position: 'relative'}}>                            
-                            <div className="pl-5">
-                                <video playsInline autoPlay muted loop style={{width:'350px', border: '3px solid #4a4a4a'}}>
-                                    <source src={benefitsVideo} type="video/mp4"/>
-                                </video>
-                            </div>                
-                        </div>
-                 </div>
+                    </div>
                 }
             />
 
