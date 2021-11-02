@@ -23,9 +23,6 @@ const faq = [
         answer: "The story is centered on BAYC NFTs. However, MAYC, BAKC, Coolcats, Craniums and Lions will also play a major role, forming the backbone of the main cast. In addition, the stage is set for many different NFTs to join the show as recurring cast members and in supporting roles. The more the merrier."
 
     }, {
-        question: "WHEN NETFLIX?", //7
-        answer: "TRAF episodes will be available on our website www.theredapefamily.com and on our <a href='https://www.youtube.com/channel/UCLCsACZQEeKOzjfbK2kIo9A' target='_blank'>YouTube channel</a>"
-    }, {
         question: "WHEN NETFLIX?", //10
         answer: "We are in talks with many different streaming platforms. When the time is right we will seriously consider the opportunity that best suits our vision, unique brand of comedy and community driven spirit"
     }
