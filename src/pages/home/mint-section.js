@@ -118,31 +118,29 @@ const Form = props => {
             </div>
             <div className="has-text-centered" >
 
+                {/* hidden input to count mints quantity */}
                 <div className="control">
                     <input className="is-hidden" name="mintQuantity" type="number" onChange={formik.handleChange} value={formik.values.mintQuantity}/>
                 </div>
-
-
-                <br/>
-                <br/>
 
                 {
                     props.wallet.currentAccount
                     ? (
                         props.wallet.connectedToOperatingNetwork ?
                             <div>
+                                <button className="button has-font-audiowide is-cyellow is-rounded has-text-black has-text-weight-bold is-size-4" type="button" style={{height: '', width: '40px'}} onClick={onDecreaseClicked} disabled={ Number(formik.values.mintQuantity) == 1}>-</button> &nbsp;
+                                <button className={`button has-font-audiowide is-cyellow is-rounded has-text-black has-text-weight-bold is-size-4 ${props.txReducer.MINT_TX.loading ? 'is-loading' : ''} `} type="submit" disabled={!props.wallet.connectedToOperatingNetwork || !(webData && webData.mintsLeft > 0)} >MINT {formik.values.mintQuantity}</button> &nbsp;
+                                <button className="button has-font-audiowide is-cyellow is-rounded has-text-black has-text-weight-bold is-size-4" type="button" style={{height: '', width: '40px'}} onClick={onIncreaseClicked} disabled={ (webData && webData.mintsLeft == formik.values.mintQuantity) }>+</button>
+                                <br/><br/>                                
                                 {
                                     webData == null ?
                                         null
                                     :
-                                        <div className="mb-4">
-                                            <h1 className="subtitle mb-0 has-text-white has-text-weight-bold">Your mints: {webData.userMints}</h1>
-                                            <small className="has-text-white has-text-weight-bold"> NFT's left: {webData.leftNFT}</small>
+                                        <div className="">
+                                            <h1 className="subtitle mb-0 has-text-white has-text-weight-bold is-hidden">Your mints: {webData.userMints}</h1>
+                                            <h1 className="has-text-white has-text-weight-bold"> Episode 1 Tokens Left: {webData.leftNFT}</h1>
                                         </div>
                                 }
-                                <button className="button has-font-audiowide is-cyellow is-rounded has-text-black has-text-weight-bold is-size-4" type="button" style={{height: '', width: '40px'}} onClick={onDecreaseClicked} disabled={ Number(formik.values.mintQuantity) == 1}>-</button> &nbsp;
-                                <button className={`button has-font-audiowide is-cyellow is-rounded has-text-black has-text-weight-bold is-size-4 ${props.txReducer.MINT_TX.loading ? 'is-loading' : ''} `} type="submit" disabled={!props.wallet.connectedToOperatingNetwork || !(webData && webData.mintsLeft > 0)} >MINT {formik.values.mintQuantity}</button> &nbsp;
-                                <button className="button has-font-audiowide is-cyellow is-rounded has-text-black has-text-weight-bold is-size-4" type="button" style={{height: '', width: '40px'}} onClick={onIncreaseClicked} disabled={ (webData && webData.mintsLeft == formik.values.mintQuantity) }>+</button>
                             </div>
                         :
                             <button type="button" className="button is-cyellow" onClick={e => props.request_change_network(1)}>
@@ -157,19 +155,17 @@ const Form = props => {
                 }
 
                 <div>{(webData && webData.mintsLeft == 0) ? 'You have reached the minting limit for this episode! Thank you so much!' : ''}</div>
-                <br/>
-                <br/>
-                <p className="has-text-centered has-text-weight-bold has-text-white has-font-audiowide is-size-5">
-                    
-
-                    Presale of Episode 1 is LIVE <br/>
-                    Mint episode 1 token at 0.95 eth + gas <br/>
-                    Reveal of episode 1 on november 23 
+                <br/>                
+                <p className="has-text-centered has-text-weight-bold has-text-light has-font-audiowide is-size-6">
+                    <div style={{color: '#d1d1d1'}}>
+                        Presale of Ep1 is LIVE (0.95 Eth + Gas)<br/>
+                        Reveal of Ep1 on November 23<br/>
+                        10 Tokens per wallet / MetaMask only<br/>
+                    </div>
                     <br/>
-                    Maximum of 10 tokens per wallet <br/>
-                    Supported wallet: metamask
-                    <br/><br/>
-                    <a className="has-text-cyellow" onClick={e => setVideoOpen(true)}>HOW TO MINT FROM YOUR SMARTPHONE </a>
+                    <a className="has-text-warning" onClick={e => setVideoOpen(true)}>HOW TO MINT FROM YOUR SMARTPHONE </a>
+                    <hr style={{width:'200px', margin: '20px auto', background: '#4E4E4E' }}/>
+                    <span className="has-text-warning" onClick={e => setVideoOpen(true)}>REVEAL <br/> 22 DAYS 19 HOURS 32 MINUTES 59 SECONDS</span>
                 </p>
             </div>
         </form>
