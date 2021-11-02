@@ -61,7 +61,7 @@ const team = [
         sortId: 7,
         imageurl: member7,
         name: 'Ramzi Faris',
-        charge: 'Brand Develpment Partner',
+        charge: 'Brand Development Guru',
         link: '<a href="https://www.instagram.com/donfuego.beats/?hl=en" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fab fa-instagram"></i></span></a>',
         info: ''
 

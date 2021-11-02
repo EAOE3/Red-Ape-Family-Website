@@ -112,8 +112,8 @@ const HomePage = props => {
                         </div>
                         <div className="column">
                             <div className="pl-5" style={{borderLeft: '3px solid #FFC000'}}>
-                                <h1 className="title has-text-warning is-size-6">MEET CHUCKY!</h1>
-                                <h1 className="title has-text-white is-size-5">Welcome to The Red Ape Family!</h1>
+                                <h1 className="title has-text-warning is-size-6 has-text-weight-bold">MEET CHUCKY!</h1>
+                                <h1 className="title has-text-white is-size-5 has-text-weight-bold">Welcome to The Red Ape Family!</h1>
                             </div>
                             <br/>
                             <div className="pl-5">
@@ -133,7 +133,7 @@ const HomePage = props => {
                 content={
                     <div className="columns">
                         <div className="column has-text-centered  px-4">
-                            <h1 className="title has-text-white is-4 has-text-left">EXCLUSIVE BENEFITS FOR <br/><span className="has-text-warning">THE RED APE FAMILY</span> HOLDERS</h1>
+                            <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">EXCLUSIVE BENEFITS FOR <br/><span className="has-text-warning">THE RED APE FAMILY</span> HOLDERS</h1>
                             <br/>
                             <ul>
                                 {
@@ -176,7 +176,7 @@ const HomePage = props => {
                 content={
                     <div>
                         
-                        <h1 className="title has-text-white is-4 has-text-left">SEASON 1 MIDSEASON <span className="has-text-warning">ROADMAP</span> </h1>
+                        <h1 className="title has-text-white is-4 has-text-left ">SEASON 1 MIDSEASON <span className="has-text-warning">ROADMAP</span> </h1>
                         <div className="columns">                            
                             <div className="column p-0">
                                 <figure className="image is-16x9">
@@ -217,7 +217,7 @@ const HomePage = props => {
                             {
                                 faqData.map((item, i) =>
                                     <details style={{borderBottom: '3px solid #452E2F'}} key={i}>
-                                        <summary className="has-text-white is-size-5">{item.question}</summary>
+                                        <summary className="has-text-white is-size-5 has-text-weight-bold">{item.question}</summary>
                                         <p className="has-text-white"><ReactHtml html={item.answer}/></p>
                                     </details>
                                 )
@@ -233,7 +233,7 @@ const HomePage = props => {
                 className="has-background-black"
                 content={
                     <div>
-                        <h1 className="title has-text-white has-text-centered">MEET THE TEAM</h1>
+                        <h1 className="title has-text-white has-text-centered is-4">MEET THE TEAM</h1>
                         <br/><br/><br/>
 
                         <div className="columns is-multiline px-3">
@@ -316,7 +316,7 @@ const HomePage = props => {
                 className="has-background-primary"
                 content={
                     <div>
-                        <h1 className="title has-text-white has-text-weight-bold has-text-centered">MEET THE CAST</h1>
+                        <h1 className="title has-text-white has-text-weight-bold has-text-centered is-4">MEET THE CAST</h1>
                         <br/><br/><br/>
                         <div className="columns">
                             {
