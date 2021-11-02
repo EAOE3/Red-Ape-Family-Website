@@ -206,7 +206,7 @@ const HomePage = props => {
                 }
             />
 
-            
+            {/* faq section */}
             <SectionLayout
                 className="has-background-primary"
                 content={
@@ -218,7 +218,7 @@ const HomePage = props => {
                                 faqData.map((item, i) =>
                                     <details style={{borderBottom: '3px solid #452E2F'}} key={i}>
                                         <summary className="has-text-white is-size-5">{item.question}</summary>
-                                        <p className="has-text-white">{item.answer}</p>
+                                        <p className="has-text-white"><ReactHtml html={item.answer}/></p>
                                     </details>
                                 )
                             }

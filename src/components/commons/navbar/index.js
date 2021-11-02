@@ -81,6 +81,13 @@ const Navbar = props => {
                         </a>
                     </div>
                     <div class="navbar-item has-text-centered-mobile">
+                        <a class="is-size-4 " href="https://www.instagram.com/theredapefamily/" target="_blank" onClick={onBurgerIClicked}>
+                            <span className="icon has-text-white" >
+                                <i class="fab fa-instagram"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="navbar-item has-text-centered-mobile">
                         <a class="is-size-4 " href="https://www.youtube.com/channel/UCLCsACZQEeKOzjfbK2kIo9A" target="_blank" onClick={onBurgerIClicked}>
                             <span className="icon has-text-white">
                                 <i class="fab fa-youtube"></i>

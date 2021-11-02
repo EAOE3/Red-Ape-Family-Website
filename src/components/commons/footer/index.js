@@ -13,7 +13,7 @@ const footer = props => {
                             <i class="fab fa-twitter"></i>
                         </span>
                     </a>
-                    <a href="https://twitter.com/TheRedApeFamily" target="_blank" className="ml-4">
+                    <a href="https://www.instagram.com/theredapefamily/" target="_blank" className="ml-4">
                         <span className="icon has-text-white is-size-4">
                             <i class="fab fa-instagram"></i>
                         </span>
