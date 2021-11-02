@@ -4,6 +4,7 @@ import banner from 'media/banner.mp4';
 import bananaIconPng from 'media/bananaIcon.png';
 import benefitsVideoMp4 from 'media/benefits.mp4';
 import chuckyVideoMp4 from 'media/chucky.mp4';
+import trailerMp4 from 'media/trailer.mp4';
 
 import member1Png from 'media/member1.png';
 import member2Png from 'media/member2.png';
@@ -32,12 +33,16 @@ import projectRoadmapPng from 'media/project-roadmap.png';
 import giveawaysPng from 'media/giveaways.png';
 import guestPng from 'media/guest.png';
 
+import posterPng from 'media/poster.png';
+
 export const titleImg = titleImgPng;
 export const logo = logoPng;
 export const bannerVideo = banner;
 export const bananaIcon = bananaIconPng;
 export const benefitsVideo = benefitsVideoMp4;
 export const chuckyVideo = chuckyVideoMp4;
+export const trailerVideo = trailerMp4;
+
 
 //team members
 export const member1 = member1Png;
@@ -63,8 +68,11 @@ export const mistery = castMisteryPng;
 export const question = castQuestionPng;
 export const opensea = openseaPng;
 
-//section images
+//roadmap section images
 export const episodesRoadmap = episodesRoadmapPng;
 export const projectRoadmap = projectRoadmapPng;
 export const giveaways = giveawaysPng;
 export const guest = guestPng;
+
+//trailer section images
+export const poster = posterPng;

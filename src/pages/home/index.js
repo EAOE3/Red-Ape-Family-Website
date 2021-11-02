@@ -14,7 +14,9 @@ import {
     bannerVideo,
     bananaIcon,
     benefitsVideo,
-    chuckyVideo
+    chuckyVideo,
+    trailerVideo,
+    poster
 }
 from 'images';
 
@@ -130,6 +132,41 @@ const HomePage = props => {
                 }
             />
 
+            <SectionLayout
+                className="has-background-primary p-0 m-0"
+                content={
+                    <hr style={{margin: '0', background: '#393939'}}/>
+                }
+            />    
+
+            {/* trailer */}
+            <SectionLayout
+                className="has-background-primary"
+                content={
+                    <div>
+                        <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">SEASON 1 <span className="has-text-warning">TRAILER</span></h1>
+                        <p className="title has-text-white is-6">
+                            It’s 2130. The earth is dying. But all is not lost! Four Bored Apes. One Dog. A Lazy Lion with a stethoscope. On a mission to Mars!
+                            <br/><br/>
+                            Muskville Let’s Fucking go!
+                        </p>
+                        <div className="columns" >
+                            <div className="column">                                
+                                <video controls style={{maxHeight: '430px'}}>
+                                    <source src={trailerVideo} type="video/mp4"/>
+                                </video>                                
+                            </div>
+                            <div className="column is-4">
+                                <figure className="image is-square">
+                                    <img src={poster} alt=""/>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                }
+            />
+
+
             {/* exclusive benefits */}
             <SectionLayout
                 className="has-background-black"
@@ -175,8 +212,7 @@ const HomePage = props => {
             />            
 
             {/*roadmap*/}
-            <SectionLayout
-                name="roadmap"
+            <SectionLayout                
                 _ref={roadMapSection}
                 className="has-background-black"
                 content={
