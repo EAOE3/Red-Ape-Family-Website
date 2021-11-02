@@ -156,7 +156,7 @@ const HomePage = props => {
                         </div>
                         <div className="column" style={{position: 'relative'}}>                            
                             <div className="pl-5">
-                                <video playsInline autoPlay muted loop style={{width:'350px'}}>
+                                <video playsInline autoPlay muted loop style={{width:'350px', border: '3px solid #4a4a4a'}}>
                                     <source src={benefitsVideo} type="video/mp4"/>
                                 </video>
                             </div>                
@@ -178,6 +178,7 @@ const HomePage = props => {
                 content={
                     <div>
                         <h1 className="title has-text-white is-4 has-text-left ">SEASON 1 MIDSEASON <span className="has-text-warning">ROADMAP</span> </h1>
+                        <br/><br/>
                         <div className="columns is-vcentered" style={{background: '#FBDD1D'}}>
                             <div className="column p-0">
                                 <figure className="image is-16x9">
@@ -200,7 +201,8 @@ const HomePage = props => {
                 content={
                     <div>
                         
-                        <h1 className="title has-text-white is-4 has-text-left">TURN YOUR NFT INTO A STAR AND <span className="has-text-warning">GET PAID</span>!</h1>
+                        <h1 className="title has-text-white is-4 has-text-left has-font-title">TURN YOUR NFT INTO A STAR AND <span className="has-text-warning">GET PAID</span>!</h1>
+                        <br/><br/>
                         <div className="columns is-vcentered" style={{background: '#FCE711'}}>                             
                             <div className="column p-0 is-4" >
                                 <figure className="image">
@@ -378,7 +380,7 @@ const HomePage = props => {
                         <h1 className="title has-text-white is-3">Get your ticket to Mars and Join our Discord!</h1>
                         <br/>
                         <a href="https://discord.gg/HxE754wj9r" target="_blank" className="button is-cpurple has-text-white is-size-4 is-rounded has-font-audiowide" style={{width: '200px'}}>
-                                <strong>HOP ON!</strong></a>
+                            <strong>HOP ON!</strong></a>
                         <br/>                        
                     </div>
                 }                

@@ -28,7 +28,7 @@ const footer = props => {
                             <i class="fab fa-discord"></i>
                         </span>
                     </a>
-                    <a class="is-size-4 " href="https://opensea.io/collection/unidentified-contract-abzg8vqonl" target="_blank" className="ml-4">
+                    <a class="is-size-4 " href="https://opensea.io/collection/theredapefamily" target="_blank" className="ml-4">
                         <span className="icon has-text-white">
                             <img src={opensea} alt=""/>
                         </span>
