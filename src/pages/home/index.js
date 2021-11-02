@@ -112,12 +112,13 @@ const HomePage = props => {
                         <div className="column has-text-centered  px-4">
                             <MintSection/>
                         </div>
+                        <br/>
                         <div className="column">
                             <div className="pl-5" style={{borderLeft: '3px solid #FFC000'}}>
                                 <h1 className="title has-text-warning is-size-6 has-text-weight-bold">MEET CHUCKY!</h1>
                                 <h1 className="title has-text-white is-size-5 has-text-weight-bold">Welcome to The Red Ape Family!</h1>
                             </div>
-                            <br/>
+                            <br/><br/>
                             <div className="pl-5">
                                 <video playsInline autoPlay muted loop style={{width:'350px'}}>
                                     <source src={chuckyVideo} type="video/mp4"/>
@@ -154,6 +155,7 @@ const HomePage = props => {
                                 }
                             </ul>
                         </div>
+                        
                         <div className="column" style={{position: 'relative'}}>                            
                             <div className="pl-5">
                                 <video playsInline autoPlay muted loop style={{width:'350px', border: '3px solid #4a4a4a'}}>
@@ -225,7 +227,7 @@ const HomePage = props => {
                 content={
                     <div className="">  
                         <h1 className="title has-text-white is-4 has-text-centered">FREQUENTLY ASKED QUESTIONS</h1>
-
+                        <br/>
                         <ul>
                             {
                                 faqData.map((item, i) =>
@@ -272,7 +274,7 @@ const HomePage = props => {
                             }
                             <div className="column"></div>
                         </div>
-                        <br/><br/>
+                        <br className="is-hidden-mobile"/><br className="is-hidden-mobile"/>
                         <div className="columns is-multiline px-3">
                             {
                                 [...teamData].splice(3, 5).map( (t, i) =>
@@ -294,7 +296,7 @@ const HomePage = props => {
                                 )
                             }
                         </div>
-                        <br/><br/>
+                        <br className="is-hidden-mobile"/><br className="is-hidden-mobile"/>
                         <div className="columns is-multiline px-3">
                             <div className="column"></div>
                             {

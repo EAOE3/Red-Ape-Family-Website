@@ -51,9 +51,9 @@ const Navbar = props => {
                     </Link>
 
                     <a  id="navbar-burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar" onClick={onBurgerClicked}>
-                      <span aria-hidden="true"></span>
-                      <span aria-hidden="true"></span>
-                      <span aria-hidden="true"></span>
+                      <span aria-hidden="true" style={{backgroundColor: 'white'}}></span>
+                      <span aria-hidden="true" style={{backgroundColor: 'white'}}></span>
+                      <span aria-hidden="true" style={{backgroundColor: 'white'}}></span>
                     </a>
                 </div>
 
@@ -74,6 +74,10 @@ const Navbar = props => {
                     <Link to="/team" className="has-text-white navbar-item has-text-centered-mobile" onClick={ e => {onBurgerIClicked(e)}}>
                         Team
                     </Link>
+
+                    <a to="/team" className="has-text-white navbar-item has-text-centered-mobile" onClick={ e => {onBurgerIClicked(e)}}>
+                        Whitepaper
+                    </a>
 
                     <Link to="/stream" className="has-text-white navbar-item has-text-centered-mobile" onClick={ e => {onBurgerIClicked(e)}}>
                         Stream
