@@ -23,7 +23,7 @@ const faq = [
         answer: "The story is centered on BAYC NFTs. However, MAYC, BAKC, Coolcats, Craniums and Lions will also play a major role, forming the backbone of the main cast. In addition, the stage is set for many different NFTs to join the show as recurring cast members and in supporting roles. The more the merrier."
 
     }, {
-        question: "WHEN NETFLIX?", //10
+        question: "WHEN NETFLIX, AMAZON, ETC.", //10
         answer: "We are in talks with many different streaming platforms. When the time is right we will seriously consider the opportunity that best suits our vision, unique brand of comedy and community driven spirit"
     }
 ];

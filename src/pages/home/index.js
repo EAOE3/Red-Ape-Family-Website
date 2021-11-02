@@ -50,19 +50,19 @@ const HomePage = props => {
         () => {
             let y = 0;
             switch (navbarReducer.section) {
-                // case "HOME":
-                //     y = homeSection.current.scrollIntoView()
-                //     break;
+                case "HOME":
+                    y = homeSection.current.scrollIntoView()
+                    break;
 
                 // case "FAQ":
                 //     y = faqSection.current.scrollIntoView()
                 //     window.scrollBy(0, -45);
                 //     break;
 
-                // case "ROADMAP":
-                //     y = roadMapSection.current.scrollIntoView()
-                //     window.scrollBy(0, -45);
-                //     break;
+                case "ROADMAP":
+                    y = roadMapSection.current.scrollIntoView()
+                    window.scrollBy(0, -45);
+                    break;
 
                 // case "TEAM":
                 //     y = teamSection.current.scrollIntoView()
@@ -82,7 +82,7 @@ const HomePage = props => {
         <div>
             
 
-            <section className="hero is-medium banner-home" ref={homeSection} style={{position: 'relative', height: '666px'}}>
+            <section className="hero is-medium banner-home" ref={homeSection} style={{position: 'relative', height: '666px'}} ref={homeSection}>
 
                 <div className="video-container">
                     <video playsInline autoPlay muted loop>
@@ -114,9 +114,9 @@ const HomePage = props => {
                         </div>
                         <br/>
                         <div className="column">
-                            <div className="pl-5" style={{borderLeft: '3px solid #FFC000'}}>
-                                <h1 className="title has-text-warning is-size-6 has-text-weight-bold">MEET CHUCKY!</h1>
+                            <div className="pl-5" style={{borderLeft: '3px solid #FFC000'}}>                                
                                 <h1 className="title has-text-white is-size-5 has-text-weight-bold">Welcome to The Red Ape Family!</h1>
+                                <h1 className="title has-text-warning is-size-6 has-text-weight-bold">MEET CHUCKY!</h1>
                             </div>
                             <br/><br/>
                             <div className="pl-5">
@@ -176,6 +176,8 @@ const HomePage = props => {
 
             {/*roadmap*/}
             <SectionLayout
+                name="roadmap"
+                _ref={roadMapSection}
                 className="has-background-black"
                 content={
                     <div>
@@ -194,7 +196,7 @@ const HomePage = props => {
                             </div>
                         </div>
                     </div>
-                }
+                }               
             />
 
             {/*roadmap*/}
@@ -227,7 +229,7 @@ const HomePage = props => {
                 content={
                     <div className="">  
                         <h1 className="title has-text-white is-4 has-text-centered">FREQUENTLY ASKED QUESTIONS</h1>
-                        <br/>
+                        <br/><br/>
                         <ul>
                             {
                                 faqData.map((item, i) =>

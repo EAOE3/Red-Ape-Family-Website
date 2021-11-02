@@ -132,7 +132,7 @@ const Form = props => {
                                 <button className="button has-font-audiowide is-cyellow is-rounded has-text-black has-text-weight-bold is-size-4" type="button" style={{height: '', width: '40px'}} onClick={onDecreaseClicked} disabled={ Number(formik.values.mintQuantity) == 1}>-</button> &nbsp;
                                 <button className={`button has-font-audiowide is-cyellow is-rounded has-text-black has-text-weight-bold is-size-4 ${props.txReducer.MINT_TX.loading ? 'is-loading' : ''} `} type="submit" disabled={!props.wallet.connectedToOperatingNetwork || !(webData && webData.mintsLeft > 0)} >MINT {formik.values.mintQuantity}</button> &nbsp;
                                 <button className="button has-font-audiowide is-cyellow is-rounded has-text-black has-text-weight-bold is-size-4" type="button" style={{height: '', width: '40px'}} onClick={onIncreaseClicked} disabled={ (webData && webData.mintsLeft == formik.values.mintQuantity) }>+</button>
-                                <br/><br/>                                
+                                <br/><br/>
                                 {
                                     webData == null ?
                                         null
@@ -152,11 +152,10 @@ const Form = props => {
                             Connect wallet
                         </button>
                     )
-
                 }
 
                 <div>{(webData && webData.mintsLeft == 0) ? 'You have reached the minting limit for this episode! Thank you so much!' : ''}</div>
-                <br/>                
+                <br/><br/>                
                 <p className="has-text-centered has-text-weight-bold has-text-light has-font-audiowide is-size-6">
                     <div style={{color: '#d1d1d1'}}>
                         Presale of Ep1 is LIVE (0.95 Eth + Gas)<br/>
@@ -165,7 +164,7 @@ const Form = props => {
                     </div>
                     <br/>
                     <a className="has-text-warning" onClick={e => setVideoOpen(true)}>HOW TO MINT FROM YOUR SMARTPHONE </a>
-                    <hr style={{width:'200px', margin: '20px auto', background: '#4E4E4E' }}/>
+                    <hr style={{width:'200px', margin: '40px auto', background: '#4E4E4E' }}/>
                     <span className="has-text-warning" onClick={e => setVideoOpen(true)}>REVEAL <br/> <CountDown className="is-uppercase"/></span>
                 </p>
             </div>

@@ -1,6 +1,6 @@
 const data = [
     {
-        body: "25% of streaming revenue will go to TRAF holders."
+        body: "25% of OTT streaming revenue will go to TRAF holders"
     }, {
         body: "First minters get 2.5% royalties for life."
     }, {
@@ -17,8 +17,6 @@ const data = [
         body: "Have your name or Twitter in the credits of the next episode."
     }, {
         body: "Benefit from discounts on the TRAF Merch."
-    }, {
-        body: "Benefit from all future collabs that the TRAF team will make."
     }, {
         body: "Benefit from all future collabs that the TRAF team will make."
     }
