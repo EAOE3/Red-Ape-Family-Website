@@ -48,24 +48,24 @@ const HomePage = props => {
         () => {
             let y = 0;
             switch (navbarReducer.section) {
-                case "HOME":
-                    y = homeSection.current.scrollIntoView()
-                    break;
+                // case "HOME":
+                //     y = homeSection.current.scrollIntoView()
+                //     break;
 
-                case "FAQ":
-                    y = faqSection.current.scrollIntoView()
-                    window.scrollBy(0, -45);
-                    break;
+                // case "FAQ":
+                //     y = faqSection.current.scrollIntoView()
+                //     window.scrollBy(0, -45);
+                //     break;
 
-                case "ROADMAP":
-                    y = roadMapSection.current.scrollIntoView()
-                    window.scrollBy(0, -45);
-                    break;
+                // case "ROADMAP":
+                //     y = roadMapSection.current.scrollIntoView()
+                //     window.scrollBy(0, -45);
+                //     break;
 
-                case "TEAM":
-                    y = teamSection.current.scrollIntoView()
-                    window.scrollBy(0, -45);
-                    break;
+                // case "TEAM":
+                //     y = teamSection.current.scrollIntoView()
+                //     window.scrollBy(0, -45);
+                //     break;
 
 
 
@@ -163,171 +163,222 @@ const HomePage = props => {
                 }
             />
 
- 
-            
+            <SectionLayout
+                className="has-background-black p-0 m-0"
+                content={
+                    <hr style={{margin: '0', background: '#393939'}}/>
+                }
+            />            
 
-            {/*roadmap
-            <section className="has-background-black px-4" ref={roadMapSection}>
-                <div className="columns">
-                <div className="column p-0">
-                        <figure className="image is-16x9">
-                            <img src={giveaways} alt=""/>
-                        </figure>
+            {/*roadmap*/}
+            <SectionLayout
+                className="has-background-black"
+                content={
+                    <div>
+                        
+                        <h1 className="title has-text-white is-4 has-text-left">SEASON 1 MIDSEASON <span className="has-text-warning">ROADMAP</span> </h1>
+                        <div className="columns">                            
+                            <div className="column p-0">
+                                <figure className="image is-16x9">
+                                    <img src={roadmap} alt=""/>
+                                </figure>
+                            </div>                    
+                        </div>
                     </div>
-                    <div className="column p-0">
-                        <figure className="image is-16x9">
-                            <img src={roadmap} alt=""/>
-                        </figure>
-                    </div>                    
-                </div>
-            </section>*/}
+                }
+            />
 
-            {/* old roadmap section
-            <section className="has-background-primary py-6 is-hidden">
-                <div className="container has-text-centered">
-                        <h1 className="title has-text-white">ROADMAP SEASON 1</h1>
-                    <ul className="roadmap-list">
-                        {
-                            data3.map( (rmap, i) =>
-                                <li className="has-text-white mb-3 is-size-5 has-text-weight-bold" key={i}>
-                                    <span className="has-text-warning">{rmap.title}</span> <br/>
-                                    <span><ReactHtml html={rmap.body}/></span>
-                                </li>
-                            )
-                        }
-                    </ul>
-                    <br/>
-                    <h1 className="subtitle has-text-white has-text-weight-bold is-italic">
-                        OTHER ANNOUNCEMENTS WILL BE MADE THROUGHOUT THE SEASON
-                    </h1>
+            {/*roadmap*/}
+            <SectionLayout
+                className="has-background-black"
+                content={
+                    <div>
+                        
+                        <h1 className="title has-text-white is-4 has-text-left">TURN YOUR NFT INTO A STAR AND <span className="has-text-warning">GET PAID</span>!</h1>
+                        <div className="columns">                            
+                            <div className="column p-0">
+                                <figure className="image is-16x9">
+                                    <img src={roadmap} alt=""/>
+                                </figure>
+                            </div>                    
+                        </div>
+                    </div>
+                }
+            />
 
-                </div>
-            </section>*/}
+            
+            <SectionLayout
+                className="has-background-primary"
+                content={
+                    <div className="">  
+                        <h1 className="title has-text-white is-4 has-text-centered">FREQUENTLY ASKED QUESTIONS</h1>
 
-            {/* team 
-            <section className="has-background-black px-4" ref={teamSection}>
-                <div className="container py-6">
+                        <ul>
+                            {
+                                faqData.map((item, i) =>
+                                    <details style={{borderBottom: '3px solid #452E2F'}} key={i}>
+                                        <summary className="has-text-white is-size-5">{item.question}</summary>
+                                        <p className="has-text-white">{item.answer}</p>
+                                    </details>
+                                )
+                            }
+                        </ul>
+
+                    </div>
+                }       
+            />
+
+            {/* team  */}
+            <SectionLayout
+                className="has-background-black"
+                content={
+                    <div>
                         <h1 className="title has-text-white has-text-centered">MEET THE TEAM</h1>
                         <br/><br/><br/>
 
-                    <div className="columns is-multiline px-3">
-                        <div className="column"></div>
-                        {
-                            [...teamData].splice(0, 3).map( (t, i) =>
-                                <div className="column has-text-centered" key={i}>
+                        <div className="columns is-multiline px-3">
+                            <div className="column"></div>
+                            {
+                                [...teamData].splice(0, 3).map( (t, i) =>
+                                    <div className="column has-text-centered" key={i}>
 
 
-                                    <img className="is-rounded bwToColorImg" src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
+                                        <img className="is-rounded bwToColorImg" src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
 
 
-                                    <br/>
-                                    <br/>
+                                        <br/>
+                                        <br/>
 
-                                    <div className="" style={{height:"80px"}}>
-                                        <h1 className="title has-text-white is-5 has-text-centered">{t.name}</h1>
-                                        <h1 className="subtitle has-text-white is-6 has-text-centered">{t.charge}</h1>
+                                        <div className="" style={{height:"80px"}}>
+                                            <h1 className="title has-text-white is-5 has-text-centered">{t.name}</h1>
+                                            <h1 className="subtitle has-text-white is-6 has-text-centered">{t.charge}</h1>
+                                        </div>
+                                        <h1 className="subtitle has-text-white is-5 has-text-centered"><ReactHtml html={t.link}/></h1>
                                     </div>
-                                    <h1 className="subtitle has-text-white is-5 has-text-centered"><ReactHtml html={t.link}/></h1>
-                                </div>
-                            )
-                        }
-                        <div className="column"></div>
-                    </div>
-                    <br/><br/>
-                    <div className="columns is-multiline px-3">
-                        {
-                            [...teamData].splice(3, 5).map( (t, i) =>
-                                <div className="column has-text-centered" key={i}>
+                                )
+                            }
+                            <div className="column"></div>
+                        </div>
+                        <br/><br/>
+                        <div className="columns is-multiline px-3">
+                            {
+                                [...teamData].splice(3, 5).map( (t, i) =>
+                                    <div className="column has-text-centered" key={i}>
 
 
-                                    <img className="is-rounded bwToColorImg" src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
+                                        <img className="is-rounded bwToColorImg" src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
 
 
-                                    <br/>
-                                    <br/>
+                                        <br/>
+                                        <br/>
 
-                                    <div className="" style={{height:"80px"}}>
-                                        <h1 className="title has-text-white is-5 has-text-centered">{t.name}</h1>
-                                        <h1 className="subtitle has-text-white is-6 has-text-centered">{t.charge}</h1>
+                                        <div className="" style={{height:"80px"}}>
+                                            <h1 className="title has-text-white is-5 has-text-centered">{t.name}</h1>
+                                            <h1 className="subtitle has-text-white is-6 has-text-centered">{t.charge}</h1>
+                                        </div>
+                                        <h1 className="subtitle has-text-white is-5 has-text-centered"><ReactHtml html={t.link}/></h1>
                                     </div>
-                                    <h1 className="subtitle has-text-white is-5 has-text-centered"><ReactHtml html={t.link}/></h1>
-                                </div>
-                            )
-                        }
-                    </div>
-                    <br/><br/>
-                    <div className="columns is-multiline px-3">
-                        <div className="column"></div>
-                        {
-                            [...teamData].splice(8, 4).map( (t, i) =>
-                                <div className="column has-text-centered" key={i}>
+                                )
+                            }
+                        </div>
+                        <br/><br/>
+                        <div className="columns is-multiline px-3">
+                            <div className="column"></div>
+                            {
+                                [...teamData].splice(8, 4).map( (t, i) =>
+                                    <div className="column has-text-centered" key={i}>
 
 
-                                    <img className="is-rounded bwToColorImg" src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
+                                        <img className="is-rounded bwToColorImg" src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
 
 
-                                    <br/>
-                                    <br/>
+                                        <br/>
+                                        <br/>
 
-                                    <div className="" style={{height:"80px"}}>
-                                        <h1 className="title has-text-white is-5 has-text-centered">{t.name}</h1>
-                                        <h1 className="subtitle has-text-white is-6 has-text-centered">{t.charge}</h1>
+                                        <div className="" style={{height:"80px"}}>
+                                            <h1 className="title has-text-white is-5 has-text-centered">{t.name}</h1>
+                                            <h1 className="subtitle has-text-white is-6 has-text-centered">{t.charge}</h1>
+                                        </div>
+                                        <h1 className="subtitle has-text-white is-5 has-text-centered"><ReactHtml html={t.link}/></h1>
                                     </div>
-                                    <h1 className="subtitle has-text-white is-5 has-text-centered"><ReactHtml html={t.link}/></h1>
-                                </div>
-                            )
-                        }
-                        <div className="column"></div>
+                                )
+                            }
+                            <div className="column"></div>
+                        </div>
+
                     </div>
+                }
+            />
+            
 
-                </div>
-            </section>*/}
-
-            {/*tokenomics
-            <section className="has-background-primary px-4">
-                <div className="container py-6">
-                    <h1 className="title has-text-white has-text-weight-bold has-text-centered">MEET THE CAST</h1>
-                    <br/><br/><br/>
-                    <div className="columns">
-                        {
-                            [...castData].splice(0, 5).map( (c, i) =>
-                                <div className="column has-text-centered" key={i}>
-                                    <img className="is-rounded" src={c.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
-                                    <br/><br/>
-                                    <div className="" style={{height:"80px"}}>
-                                        <h1 className="title is-5 has-text-centered has-text-white">{c.name}</h1>
-                                        <h1 className="subtitle is-5 has-text-centered mb-0 has-text-white">{c.discord}</h1>
+            {/* cast */}
+            <SectionLayout
+                className="has-background-primary"
+                content={
+                    <div>
+                        <h1 className="title has-text-white has-text-weight-bold has-text-centered">MEET THE CAST</h1>
+                        <br/><br/><br/>
+                        <div className="columns">
+                            {
+                                [...castData].splice(0, 5).map( (c, i) =>
+                                    <div className="column has-text-centered" key={i}>
+                                        <img className="is-rounded" src={c.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
+                                        <br/><br/>
+                                        <div className="" style={{height:"80px"}}>
+                                            <h1 className="title is-5 has-text-centered has-text-white">{c.name}</h1>
+                                            <h1 className="subtitle is-5 has-text-centered mb-0 has-text-white">{c.discord}</h1>
+                                        </div>
+                                        <h1 className="subtitle is-5 has-text-centered"><ReactHtml html={c.link}/></h1>
                                     </div>
-                                    <h1 className="subtitle is-5 has-text-centered"><ReactHtml html={c.link}/></h1>
-                                </div>
-                            )
-                        }
-                    </div>
-                    <br/><br/>
-                        <h1 className="subtitle has-text-white has-text-centered mb-5">Starting Episode 2</h1>
-                    <br/>
+                                )
+                            }
+                        </div>
+                        <br/><br/>
+                            <h1 className="subtitle has-text-white has-text-centered mb-5">Starting Episode 2</h1>
+                        <br/>
 
-                    <div className="columns ">
-                        <div className="column"></div>
-                        {
-                            [...castData].splice(5, 3).map( (c, i) =>
-                                <div className="column has-text-centered" key={i}>
-                                    <img className="is-rounded" src={c.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
-                                    <br/><br/>
-                                    <div className="" style={{height:"80px"}}>
-                                        <h1 className="title is-5 has-text-centered has-text-white">{c.name}</h1>
-                                        <h1 className="subtitle is-5 has-text-centered mb-0 has-text-white">{c.discord}</h1>
+                        <div className="columns ">
+                            <div className="column"></div>
+                            {
+                                [...castData].splice(5, 3).map( (c, i) =>
+                                    <div className="column has-text-centered" key={i}>
+                                        <img className="is-rounded" src={c.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
+                                        <br/><br/>
+                                        <div className="" style={{height:"80px"}}>
+                                            <h1 className="title is-5 has-text-centered has-text-white">{c.name}</h1>
+                                            <h1 className="subtitle is-5 has-text-centered mb-0 has-text-white">{c.discord}</h1>
+                                        </div>
+                                        <h1 className="subtitle is-5 has-text-centered"><ReactHtml html={c.link}/></h1>
                                     </div>
-                                    <h1 className="subtitle is-5 has-text-centered"><ReactHtml html={c.link}/></h1>
-                                </div>
-                            )
-                        }
-                        <div className="column"></div>
+                                )
+                            }
+                            <div className="column"></div>
+                        </div>
+
+                  </div>
+                }
+            />
+
+            <SectionLayout
+                className="has-background-black"
+                content={
+                    <div className="has-text-centered">
+                        <h1 className="title has-text-warning is-4">MUSKVILLE IS WAITING!</h1>
+                        <h1 className="title has-text-white is-3">Get your ticket to Mars and Join our Discord!</h1>
+                        <br/>
+                        <a href="https://discord.gg/HxE754wj9r" target="_blank" className="button is-cpurple has-text-white is-size-4 is-rounded has-font-audiowide" style={{width: '200px'}}>
+                                <strong>HOP ON!</strong></a>
+                        <br/>                        
                     </div>
+                }                
+            />
 
-                </div>
-            </section>*/}
-
+            <SectionLayout
+                className="has-background-black p-0 m-0"
+                content={
+                    <hr style={{margin: '0', background: '#393939'}}/>
+                }
+            />  
         </div>
     );
 }

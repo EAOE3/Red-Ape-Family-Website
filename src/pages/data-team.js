@@ -62,7 +62,7 @@ const team = [
         imageurl: member7,
         name: 'Ramzi Faris',
         charge: 'Brand Develpment Partner',
-        link: '<a href="https://twitter.com/neil_erik" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fab fa-twitter"></i></span></a>',
+        link: '<a href="https://www.instagram.com/donfuego.beats/?hl=en" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fab fa-instagram"></i></span></a>',
         info: ''
 
     }, {

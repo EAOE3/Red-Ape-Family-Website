@@ -60,3 +60,32 @@
 
 
 }
+
+details>summary {
+ 
+    list-style: none;
+}
+summary::-webkit-details-marker {
+    display: none
+}
+
+summary::after {    
+    position: absolute;    
+    left: 100%;    
+    transform: translate(-100%, -10px);
+    font-size: 2rem;
+    content: '+';
+}
+details[open] summary:after {
+    font-size: 2rem;
+    content: " -";
+}
+details {
+    
+    border-radius: 0.2rem;
+    padding: 1rem;
+}
+
+details[open] > summary {
+    margin-bottom: 0.5rem;
+}
