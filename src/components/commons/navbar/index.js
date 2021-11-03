@@ -75,9 +75,9 @@ const Navbar = props => {
                         Team
                     </Link>
 
-                    {/* <a to="/team" className="has-text-white navbar-item has-text-centered-mobile" onClick={ e => {onBurgerIClicked(e)}}>
+                    <a href="https://loque.gitbook.io/traf/" className="has-text-white navbar-item has-text-centered-mobile" onClick={ e => {onBurgerIClicked(e)}}>
                         Whitepaper
-                    </a> */}
+                    </a>
 
                     <Link to="/stream" className="has-text-white navbar-item has-text-centered-mobile" onClick={ e => {onBurgerIClicked(e)}}>
                         Stream
