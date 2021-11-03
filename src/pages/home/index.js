@@ -3,7 +3,6 @@ import Navbar from 'components/commons/navbar';
 import Footer from 'components/commons/footer';
 
 import {
-
     cloudsBanner,
     titleImg,
     movie,
@@ -13,12 +12,13 @@ import {
     guest,
     bannerVideo,
     bananaIcon,
-    benefitsVideo,
+    benefits,
     chuckyVideo,
-    trailerVideo,
-    poster
+    trailerVideo
 }
 from 'images';
+
+import {Link} from 'react-router-dom';
 
 import {data, data2, data3} from './data-roadmap';
 import teamData from '../data-team';
@@ -31,6 +31,7 @@ import MintSection from './mint-section';
 
 import {connect} from 'react-redux';
 import {set_section} from 'redux/actions/navbarActions';
+import {set_member} from 'redux/actions/teamMembersActions';
 
 import sectionLayout from 'layouts/section';
 
@@ -153,15 +154,10 @@ const HomePage = props => {
                         <br/><br/>
                         <div className="columns" >
                             <div className="column">                                
-                                <video controls style={{maxHeight: '430px'}}>
+                                <video controls>
                                     <source src={trailerVideo} type="video/mp4"/>
                                 </video>                                
-                            </div>
-                            <div className="column is-4">
-                                <figure className="image is-square">
-                                    <img src={poster} alt=""/>
-                                </figure>
-                            </div>
+                            </div>                            
                         </div>
                     </div>
                 }
@@ -173,10 +169,11 @@ const HomePage = props => {
                 className="has-background-black"
                 content={
                     <div>
-                        <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">EXCLUSIVE BENEFITS FOR <br/><span className="has-text-warning">THE RED APE FAMILY</span> HOLDERS</h1>
+                        
                         <br/>
                         <div className="columns">
                             <div className="column has-text-centered  px-4">                                
+                            <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">EXCLUSIVE BENEFITS FOR <br/><span className="has-text-warning">THE RED APE FAMILY</span> HOLDERS</h1>
                                 <ul>
                                     {
                                         benefitsData.map((item, i) =>
@@ -196,9 +193,7 @@ const HomePage = props => {
                             </div>                            
                             <div className="column" style={{position: 'relative'}}>                            
                                 <div className="pl-5">
-                                    <video playsInline autoPlay muted loop style={{width:'350px', border: '3px solid #4a4a4a'}}>
-                                        <source src={benefitsVideo} type="video/mp4"/>
-                                    </video>
+                                    <img src={benefits} alt="" width="400"/>
                                 </div>                
                             </div>
                         </div>
@@ -272,7 +267,7 @@ const HomePage = props => {
                             {
                                 faqData.map((item, i) =>
                                     <details style={{borderBottom: '3px solid #452E2F'}} key={i}>
-                                        <summary className="has-text-white is-size-5 has-text-weight-bold">{item.question}</summary>
+                                        <summary className="has-text-white is-size-5 has-text-weight-bold pr-5">{item.question}</summary>
                                         <p className="has-text-white"><ReactHtml html={item.answer}/></p>
                                     </details>
                                 )
@@ -297,9 +292,9 @@ const HomePage = props => {
                                 [...teamData].splice(0, 3).map( (t, i) =>
                                     <div className="column has-text-centered" key={i}>
 
-
-                                        <img className="is-rounded bwToColorImg" src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
-
+                                        <Link to="/team">
+                                            <img className="is-rounded bwToColorImg" onClick={() => props.set_member(i)} src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
+                                        </Link>
 
                                         <br/>
                                         <br/>
@@ -318,11 +313,11 @@ const HomePage = props => {
                         <div className="columns is-multiline px-3">
                             {
                                 [...teamData].splice(3, 5).map( (t, i) =>
-                                    <div className="column has-text-centered" key={i}>
+                                    <div className="column has-text-centered" key={i} >
 
-
-                                        <img className="is-rounded bwToColorImg" src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
-
+                                        <Link to="/team">
+                                            <img className="is-rounded bwToColorImg" onClick={() => props.set_member(i+3)} src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
+                                        </Link>
 
                                         <br/>
                                         <br/>
@@ -343,9 +338,14 @@ const HomePage = props => {
                                 [...teamData].splice(8, 4).map( (t, i) =>
                                     <div className="column has-text-centered" key={i}>
 
-
-                                        <img className="is-rounded bwToColorImg" src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
-
+                                        {
+                                            i == 1 || i == 2 ?
+                                                <img className="is-rounded bwToColorImg" src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
+                                            :
+                                                <Link to="/team">
+                                                    <img className="is-rounded bwToColorImg" onClick={() => props.set_member(i+8)} src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
+                                                </Link>
+                                        }
 
                                         <br/>
                                         <br/>
@@ -445,6 +445,7 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     {
-        set_section
+        set_section,
+        set_member
     }
 )(HomePage);

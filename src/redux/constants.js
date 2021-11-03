@@ -33,3 +33,5 @@ export const ADD_USER_TOKEN = 'ADD_USER_TOKEN';
 export const REMOVE_USER_TOKEN = 'REMOVE_USER_TOKEN';
 
 export const SET_SECTION = 'SET_SECTION';
+
+export const SET_MEMBER = 'SET_MEMBER';

@@ -13,6 +13,8 @@ import HomePage from 'pages/home';
 import TeamPage from 'pages/team';
 import FaqPage from 'pages/faq';
 import Stream from 'pages/stream';
+import Whitepaper from 'pages/whitepaper';
+
 import 'scss/main.scss';
 
 import {initWeb3} from './web3';
@@ -41,9 +43,10 @@ const App = () => {
                     <Stream/>
                 </Route>
 
-                {/*<Route exact path="/faq">
-                    <FaqPage/>
-                </Route>*/}
+                <Route exact path="/whitepaper">
+                    <Whitepaper/>
+                </Route>
+                
             </Switch>
             <Footer/>
         </Router>

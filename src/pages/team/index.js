@@ -2,6 +2,8 @@ import {useEffect} from 'react';
 import _teamData from '../data-team';
 import ReactHtml from 'raw-html-react';
 
+import { connect } from 'react-redux';
+
 const teamData = [..._teamData].sort((a,b) => {
     if (a.sortId < b.sortId) {
         return -1;
@@ -16,11 +18,26 @@ const teamData = [..._teamData].sort((a,b) => {
 
 const Team = props => {
 
+    const refs = [];
+
+
+    console.log(props.teamMemberReducer);
+
     useEffect(
         () => {
             window.scrollTo(0, 0);
         }, []
     );
+
+    useEffect(
+        () => {
+            if(props.teamMemberReducer.section != null){
+                refs[props.teamMemberReducer.section].scrollIntoView();
+                window.scrollBy(0, -56);
+            }
+        }, [props.teamMemberReducer]
+    );
+
     return(
         <div>
             <section className="py-6 has-background-black">
@@ -36,7 +53,7 @@ const Team = props => {
                                 if(i == 9 || i == 10 ) return null;
 
                                 return(
-                                    <li className=" mb-6" key={i}>
+                                    <li className=" mb-6" key={i} ref={ref => refs[i] = ref}>
 
                                         <div className="columns is-vcentered">
                                             <div className="column is-3" style={{borderRight: '2px solid #585858'}}>
@@ -75,4 +92,11 @@ const Team = props => {
     );
 }
 
-export default Team;
+const mapStateToProps = state => ({
+    teamMemberReducer: state.teamMemberReducer
+});
+
+export default connect(
+    mapStateToProps, 
+    null
+)(Team);
