@@ -8,7 +8,7 @@ const data = [
     }, {
         body: "Possibility to win 1 BAYC and 3 MAYC in episode 1 of S1."
     }, {
-        body: "Possibility to win other blue-chip NFTs throughout S1 (community will vote for the projects)"
+        body: "Possibility to win other blue-chip NFTs throughout S1"
     }, {
         body: "Possibility to have your NFT star in the show and get paid for it."
     }, {
