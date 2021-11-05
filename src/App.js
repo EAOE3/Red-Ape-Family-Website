@@ -14,6 +14,7 @@ import TeamPage from 'pages/team';
 import FaqPage from 'pages/faq';
 import Stream from 'pages/stream';
 import Whitepaper from 'pages/whitepaper';
+import SocketPage from 'pages/sockets';
 
 import 'scss/main.scss';
 
@@ -45,6 +46,10 @@ const App = () => {
 
                 <Route exact path="/whitepaper">
                     <Whitepaper/>
+                </Route>
+
+                <Route exact path="/verify/:id">
+                    <SocketPage/>
                 </Route>
                 
             </Switch>

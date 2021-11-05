@@ -44,8 +44,8 @@ const Form = props => {
                 webData = {
                     ...webData,
                     mintsLeft: webData.maxMint - webData.userMints
-                }
-                // console.log(webData);
+                }                
+                webData.giveaway1 = 84 - (333 - Number(webData.leftNFT));                
             } catch (e) {
                 console.log('ERROR CONSULTING DATA', e);
             }finally{
@@ -166,7 +166,16 @@ const Form = props => {
                     <a className="has-text-warning" onClick={e => setVideoOpen(true)}>HOW TO MINT FROM YOUR SMARTPHONE </a>
                     <hr style={{width:'200px', margin: '40px auto', background: '#4E4E4E' }}/>
                     <span className="has-text-warning" onClick={e => setVideoOpen(true)}>REVEAL <br/> <CountDown className="is-uppercase"/></span>
+                    <hr style={{width:'200px', margin: '40px auto', background: '#4E4E4E' }}/>
+                    <span className="has-text-warning" onClick={e => setVideoOpen(true)}>
+                        TOKENS TILL MUTANT GIVEAWAY
+                        <br/>
+                        {webData && webData.giveaway1}                        
+                    </span>
+                    
+                    
                 </p>
+                
             </div>
         </form>
     );

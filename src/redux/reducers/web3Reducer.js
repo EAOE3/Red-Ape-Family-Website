@@ -5,6 +5,7 @@ import {
 
 const defaultState = {
     web3: {},
+    initialized: false,
     contracts: []
 };
 
@@ -15,7 +16,8 @@ const reducer = (state = defaultState, action) => {
         case SET_WEB3_INSTANCE:
             return{
                 ...state,
-                web3: action.payload
+                web3: action.payload,
+                initialized: true
             };
 
         case ADD_CONTRACT:
