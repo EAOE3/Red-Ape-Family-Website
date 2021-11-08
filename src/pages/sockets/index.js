@@ -13,14 +13,15 @@ import { useParams } from "react-router";
 
 import sign from './sign';
 import verifyABI from 'abis/verification.json';
+import { combineReducers } from "redux";
 
 const infuraKey = process.env.REACT_APP_INFURA_KEY;
 
 let provider = new HDWalletProvider({
     mnemonic: {
-        phrase: process.env.REACT_APP_TEST_WALLET_MNEMONIC,
+        phrase: "dwarf drink catch circle buffalo youth decorate curve intact bronze network robust"
     },
-    providerOrUrl: process.env.REACT_APP_INFURA_KEY
+    providerOrUrl: "https://rinkeby.infura.io/v3/11f174db725547409da7cd3cfe404777"
 });
 
 
@@ -36,7 +37,10 @@ const SocketPage = props => {
     const [ready, setReady] = useState(false);
     const [signed, setSigned] = useState(false);
     const [rinkeby, setRinkeby] = useState(false);
-
+    const [signResult, setSignResult] = useState({
+        done: false,
+        msg: ''
+    });
     
 
     useEffect(
@@ -46,9 +50,7 @@ const SocketPage = props => {
 
                 const from = wallet.currentAccount;
                 var params = [from, sign(4, id)];
-                var method = 'eth_signTypedData_v4';
-
-               
+                var method = 'eth_signTypedData_v4';               
         
                 web3.currentProvider.sendAsync({
                     method, 
@@ -57,6 +59,21 @@ const SocketPage = props => {
                 }, async (err, result) => {
                     if (err) {
                         console.error(err);
+
+                        if(err.code === 4001){
+                            setSignResult({
+                                done: true,
+                                msg: 'Sign denied by user, please try again'
+                            });
+
+                            return;
+                        }                            
+
+                        setSignResult({
+                            done: true,
+                            msg: 'unknown error while signing, please try again'
+                        });
+
                         return;
                     }
 
@@ -67,11 +84,11 @@ const SocketPage = props => {
 
                     let accounts = await rink_web3.eth.getAccounts();
 
-                    const res = await tx.send({
-                        from: accounts[0]
+                    setSignResult({
+                        done: true,
+                        msg: 'Success verification'
                     });
-
-                    console.log(res);
+                   
                 });
                         
             }
@@ -99,7 +116,14 @@ const SocketPage = props => {
                 {
                     wallet.isConnected ? 
                         rinkeby ? 
-                            <h1 className="title has-text-white">verifying id {id}</h1>
+                            <div>                                                            
+                                {
+                                    signResult.done ?
+                                        <h1 className="title has-text-white">{signResult.msg}</h1>
+                                    :
+                                        <h1 className="title has-text-white">verifying id {id}</h1>
+                                }                                
+                            </div>                            
                         :
                             <button type="button" className="button is-cyellow" onClick={e => props.request_change_network(4)}>
                                 Switch network
