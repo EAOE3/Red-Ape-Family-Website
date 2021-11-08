@@ -11,6 +11,7 @@ import {
 import Web3 from 'web3';
 
 import ERCABI from 'abis/ERC1155.json';
+import verifyABI from 'abis/verification.json';
 
 
 const initWeb3 = async () => {
@@ -44,6 +45,9 @@ const initWeb3 = async () => {
         const ercContract = new web3.eth.Contract(ERCABI, '0xa803144e27aEf2Ac95E7Ab49214BD2f802C883dD');
         store.dispatch( add_contract(`ERC_CONTRACT`, ercContract) );
 
+        const verifyContract = new web3.eth.Contract(verifyABI, '0x330bdBd86c31347d60393606E925EE4aa3ddab74');
+        store.dispatch( add_contract('VERIFY_CONTRACT', verifyContract) );
+  
 
 
         //listen to eth change events
