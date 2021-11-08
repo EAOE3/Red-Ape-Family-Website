@@ -39,6 +39,7 @@ const SocketPage = props => {
     const [ready, setReady] = useState(false);
     const [signed, setSigned] = useState(false);
     const [rinkeby, setRinkeby] = useState(false);
+    const [trigger, setTrigger] = useState(0);
     const [signResult, setSignResult] = useState({
         done: false,
         msg: ''
@@ -47,8 +48,7 @@ const SocketPage = props => {
 
     useEffect(
         () => {
-            if(ready && !signed) {               
-                setSigned(true);
+            if(ready && !signed) {
 
                 const from = wallet.currentAccount;
                 var params = [from, sign(1, id)];
@@ -65,14 +65,18 @@ const SocketPage = props => {
                         if(err.code === 4001){
                             setSignResult({
                                 done: true,
+                                error: true,
                                 msg: 'Sign denied by user, please try again'
                             });
 
                             return;
-                        }                            
+                        }  
+                        
+                        setSigned(true);
 
                         setSignResult({
                             done: true,
+                            error: true,
                             msg: 'unknown error while signing, please try again'
                         });
 
@@ -92,6 +96,7 @@ const SocketPage = props => {
 
                     setSignResult({
                         done: true,
+                        error: false,
                         msg: 'verified by </br>' + wallet.currentAccount
                     });
                     
@@ -99,7 +104,7 @@ const SocketPage = props => {
                 });
                         
             }
-        }, [ready]
+        }, [ready, trigger]
     );
 
     useEffect(() => {
@@ -125,8 +130,18 @@ const SocketPage = props => {
                         rinkeby ? 
                             <div>                                                            
                                 {
-                                    signResult.done ?
-                                        <h1 className="title has-text-white has-text-centered"><ReactHtml html={signResult.msg}/></h1>
+                                    signResult.done?
+                                        signResult.error ?
+                                                <div className="has-text-centered">
+                                                    <h1 className="title has-text-white has-text-centered"><ReactHtml html={signResult.msg}/></h1>
+                                                    <button className="button is-cyellow" onClick={() => setTrigger(trigger+1)}>Try again</button>
+                                                </div>
+                                            :
+                                            <h1 className="title has-text-white has-text-centered"><ReactHtml html={signResult.msg}/></h1>
+
+
+
+                                        
                                     :
                                         <h1 className="title has-text-white has-text-centered">verifying id <br/>{id}</h1>
                                 }                                
