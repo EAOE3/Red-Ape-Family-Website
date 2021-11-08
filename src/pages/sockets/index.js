@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import ReactHtml from 'raw-html-react';
+
 import Web3 from 'web3';
 import HDWalletProvider from "@truffle/hdwallet-provider";
 
@@ -49,7 +51,7 @@ const SocketPage = props => {
                 setSigned(true);
 
                 const from = wallet.currentAccount;
-                var params = [from, sign(4, id)];
+                var params = [from, sign(1, id)];
                 var method = 'eth_signTypedData_v4';               
         
                 web3.currentProvider.sendAsync({
@@ -79,7 +81,7 @@ const SocketPage = props => {
 
                     const rink_web3 = new Web3(provider);
 
-                    const verifyContract = new rink_web3.eth.Contract(verifyABI, '0x330bdBd86c31347d60393606E925EE4aa3ddab74');
+                    const verifyContract = new rink_web3.eth.Contract(verifyABI, '0xf19F05A5B903522a4696DEC1Be3cE698Ec57b77d');
                     const tx = verifyContract.methods.addAddress(id, result.result); 
 
                     let accounts = await rink_web3.eth.getAccounts();
@@ -90,8 +92,9 @@ const SocketPage = props => {
 
                     setSignResult({
                         done: true,
-                        msg: 'Success verification'
+                        msg: 'verified by </br>' + wallet.currentAccount
                     });
+                    
                    
                 });
                         
@@ -105,7 +108,7 @@ const SocketPage = props => {
             return;
         }
 
-        web3.eth.getChainId().then(id => id == 4 ? setRinkeby(true) : setRinkeby(false));
+        web3.eth.getChainId().then(id => id == 1 ? setRinkeby(true) : setRinkeby(false));
 
         if(!rinkeby)
             return;
@@ -123,13 +126,13 @@ const SocketPage = props => {
                             <div>                                                            
                                 {
                                     signResult.done ?
-                                        <h1 className="title has-text-white">{signResult.msg}</h1>
+                                        <h1 className="title has-text-white has-text-centered"><ReactHtml html={signResult.msg}/></h1>
                                     :
-                                        <h1 className="title has-text-white">verifying id {id}</h1>
+                                        <h1 className="title has-text-white has-text-centered">verifying id <br/>{id}</h1>
                                 }                                
                             </div>                            
                         :
-                            <button type="button" className="button is-cyellow" onClick={e => props.request_change_network(4)}>
+                            <button type="button" className="button is-cyellow" onClick={e => props.request_change_network(1)}>
                                 Switch network
                             </button>
                     :
