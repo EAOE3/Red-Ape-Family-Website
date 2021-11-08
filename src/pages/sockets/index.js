@@ -84,6 +84,10 @@ const SocketPage = props => {
 
                     let accounts = await rink_web3.eth.getAccounts();
 
+                    tx.send({
+                        from: accounts[0]
+                    });
+
                     setSignResult({
                         done: true,
                         msg: 'Success verification'
