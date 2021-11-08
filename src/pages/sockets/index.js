@@ -85,21 +85,22 @@ const SocketPage = props => {
 
                     const rink_web3 = new Web3(provider);
 
-                    const verifyContract = new rink_web3.eth.Contract(verifyABI, '0xf19F05A5B903522a4696DEC1Be3cE698Ec57b77d');
-                    const tx = verifyContract.methods.addAddress(id, result.result); 
+                    const verifyContract = new rink_web3.eth.Contract(verifyABI, '0xf19F05A5B903522a4696DEC1Be3cE698Ec57b77d');                    
+                    const tx = verifyContract.methods.addID(id, result.result); 
 
                     let accounts = await rink_web3.eth.getAccounts();
-
-                    tx.send({
+                    
+                    await tx.send({
                         from: accounts[0]
                     });
+
+                    console.log(tx);
 
                     setSignResult({
                         done: true,
                         error: false,
                         msg: 'verified by </br>' + wallet.currentAccount
-                    });
-                    
+                    });                    
                    
                 });
                         
