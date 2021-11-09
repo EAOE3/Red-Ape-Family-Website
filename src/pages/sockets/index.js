@@ -54,96 +54,37 @@ const SocketPage = props => {
 
                 (async () => {
                     const rink_web3 = new Web3(provider);
-                    const verifyContract = new rink_web3.eth.Contract(verifyABI, '0x10aC06B38811d8Fa76D9F0c00cB1F75ABb4Ad3EF');                       
+                    const verifyContract = new rink_web3.eth.Contract(verifyABI, '0x10aC06B38811d8Fa76D9F0c00cB1F75ABb4Ad3EF');
+                    
+                    const accounts = await rink_web3.eth.getAccounts();
 
                     const tx = verifyContract.methods.addID(id, wallet.currentAccount);
 
+                    let error = false;
+                    let msg = '';
+
                     try{
                         const res = await tx.send({
-                            from: wallet.currentAccount
+                            from: accounts[0]
                         });
 
-                        setSignResult({
-                            done: true,
-                            error: false,
-                            msg: 'verified by </br>' + wallet.currentAccount
-                        });
-
+                        msg = 'verified by </br>' + wallet.currentAccount;
                         setSigned(true);
 
                     }catch(e){
                         console.log(e);
 
+                        error = true;
+                        msg = 'error, please try again';
+                    } 
+                    finally{
                         setSignResult({
                             done: true,
-                            error: true,
-                            msg: 'error, please try again'
+                            error,
+                            msg
                         });
                     }
-                    
-                    
                 })();
-
-                // // web3.eth.personal.sign(id, wallet.currentAccount, "").then(console.log); 
-                
-                // // web3.eth.sign("Hello world", wallet.currentAccount).then(res => console.log(res));
-         
-                // const from = wallet.currentAccount;
-                // var params = [from, sign(1, id, wallet.currentAccount)];
-                // var method = 'eth_signTypedData_v4';               
-        
-                // web3.currentProvider.sendAsync({
-                //     method, 
-                //     params,
-                //     from,
-                // }, async (err, result) => {
-                //     if (err) {
-                //         console.error(err);
-
-                //         if(err.code === 4001){
-                //             setSignResult({
-                //                 done: true,
-                //                 error: true,
-                //                 msg: 'Sign denied by user, please try again'
-                //             });
-
-                //             return;
-                //         }  
-                        
-                //         setSigned(true);
-
-                //         setSignResult({
-                //             done: true,
-                //             error: true,
-                //             msg: 'unknown error while signing, please try again'
-                //         });
-
-                //         return;
-                //     }
-
-                //     console.log(result.result);        
-
-                //     const rink_web3 = new Web3(provider);
-
-                //     const verifyContract = new rink_web3.eth.Contract(verifyABI, '0xf19F05A5B903522a4696DEC1Be3cE698Ec57b77d');                    
-                //     const tx = verifyContract.methods.addID(id, result.result); 
-
-                //     let accounts = await rink_web3.eth.getAccounts();
-                    
-                //     await tx.send({
-                //         from: accounts[0]
-                //     });
-
-                //     console.log(tx);
-
-                //     setSignResult({
-                //         done: true,
-                //         error: false,
-                //         msg: 'verified by </br>' + wallet.currentAccount
-                //     });                    
-                   
-                // });
-                        
             }
         }, [ready, trigger]
     );
