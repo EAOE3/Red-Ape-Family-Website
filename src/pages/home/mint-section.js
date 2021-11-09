@@ -168,9 +168,15 @@ const Form = props => {
                     <span className="has-text-warning" onClick={e => setVideoOpen(true)}>REVEAL <br/> <CountDown className="is-uppercase"/></span>
                     <hr style={{width:'200px', margin: '40px auto', background: '#4E4E4E' }}/>
                     <span className="has-text-warning" onClick={e => setVideoOpen(true)}>
-                        TOKENS TILL MUTANT GIVEAWAY
-                        <br/>
-                        {webData && webData.giveaway1}                        
+                        
+                        {
+                            webData && webData.giveaway1 ?
+                                TOKENS TILL MUTANT GIVEAWAY
+                                <br/>
+                                {webData.giveaway1}
+                            :
+                                CONNECT YOUR WALLET TO SEE HOW MANY MINFS LEFT UNTIL MUTANT GIVEAWAY
+                        }                        
                     </span>
                     
                     
