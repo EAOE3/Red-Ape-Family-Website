@@ -1,4 +1,4 @@
-const sign = (chainId, id) => {
+const sign = (chainId, id, wallet) => {
 
     const msgParams = JSON.stringify({
         domain: {
@@ -18,8 +18,7 @@ const sign = (chainId, id) => {
             // - This is DApp Specific
             // - Be as explicit as possible when building out the message schema.
             
-            id: id,
-
+            id: id
         },
         // Refers to the keys of the *types* object below.
         primaryType: 'VerifyData',
@@ -32,8 +31,8 @@ const sign = (chainId, id) => {
             ],              
             // Refer to PrimaryType
             VerifyData: [
-                { name: 'id', type: 'string' },                
-            ]              
+                { name: 'id', type: 'string' }
+            ]
         }
     
     });
