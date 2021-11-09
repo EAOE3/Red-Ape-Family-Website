@@ -171,11 +171,14 @@ const Form = props => {
                         
                         {
                             webData && webData.giveaway1 ?
-                                TOKENS TILL MUTANT GIVEAWAY
-                                <br/>
-                                {webData.giveaway1}
+
+                                <div>
+                                    TOKENS TILL MUTANT GIVEAWAY
+                                    <br/>
+                                    {webData.giveaway1}
+                                </div>
                             :
-                                CONNECT YOUR WALLET TO SEE HOW MANY MINFS LEFT UNTIL MUTANT GIVEAWAY
+                               <div> CONNECT YOUR WALLET TO SEE HOW MANY MINFS LEFT UNTIL MUTANT GIVEAWAY</div>
                         }                        
                     </span>
                     

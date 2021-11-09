@@ -19,13 +19,11 @@ import { combineReducers } from "redux";
 
 import {ethers} from 'ethers';
 
-const infuraKey = process.env.REACT_APP_INFURA_KEY;
-
 let provider = new HDWalletProvider({
     mnemonic: {
         phrase: "dwarf drink catch circle buffalo youth decorate curve intact bronze network robust"
     },
-    providerOrUrl: "https://rinkeby.infura.io/v3/11f174db725547409da7cd3cfe404777"
+    providerOrUrl: "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"
 });
 
 
