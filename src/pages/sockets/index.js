@@ -69,6 +69,8 @@ const SocketPage = props => {
                             msg: 'verified by </br>' + wallet.currentAccount
                         });
 
+                        setSigned(true);
+
                     }catch(e){
                         console.log(e);
 
