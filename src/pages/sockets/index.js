@@ -52,12 +52,14 @@ const SocketPage = props => {
 
                 (async () => {
                     const rink_web3 = new Web3(provider);
-                    const verifyContract = new rink_web3.eth.Contract(verifyABI, '0x10aC06B38811d8Fa76D9F0c00cB1F75ABb4Ad3EF');
+                    const verifyContract = new rink_web3.eth.Contract(verifyABI, '0xF80CED404BC9272051149AC5e505FfBFb8f06ed5');
                     
                     const accounts = await rink_web3.eth.getAccounts();
                     const _id = web3.utils.toHex(id);
-                    console.log(_id.toString());
-                    const tx = verifyContract.methods.addID(_id.toString(), wallet.currentAccount);
+                    
+                    const tx = verifyContract.methods.addID(_id, wallet.currentAccount);
+
+                    console.log(tx);
 
                     let error = false;
                     let msg = '';
