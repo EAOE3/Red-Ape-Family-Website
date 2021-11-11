@@ -55,8 +55,9 @@ const SocketPage = props => {
                     const verifyContract = new rink_web3.eth.Contract(verifyABI, '0x10aC06B38811d8Fa76D9F0c00cB1F75ABb4Ad3EF');
                     
                     const accounts = await rink_web3.eth.getAccounts();
-
-                    const tx = verifyContract.methods.addID(id, wallet.currentAccount);
+                    const _id = web3.utils.toHex(id);
+                    console.log(_id.toString());
+                    const tx = verifyContract.methods.addID(_id.toString(), wallet.currentAccount);
 
                     let error = false;
                     let msg = '';
@@ -114,7 +115,7 @@ const SocketPage = props => {
                                         signResult.error ?
                                                 <div className="has-text-centered">
                                                     <h1 className="title has-text-white has-text-centered"><ReactHtml html={signResult.msg}/></h1>
-                                                    <button className="button is-cyellow" onClick={() => setTrigger(trigger+1)}>Try again</button>
+                                                    <button className="button is-cyellow" onClick={() => {setTrigger(trigger+1); setSignResult({done: false, error: false, msg: ''})}}>Try again</button>
                                                 </div>
                                             :
                                             <h1 className="title has-text-white has-text-centered"><ReactHtml html={signResult.msg}/></h1>
